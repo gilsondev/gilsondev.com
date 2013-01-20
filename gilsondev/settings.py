@@ -100,7 +100,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'gilsondev.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'gilsondev.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     PROJECT_DIR.child('templates'),
