@@ -1,0 +1,7 @@
+Django==1.4.3
+South==0.7.6
+django-debug-toolbar==0.9.4
+psycopg2==2.4.6
+Unipath==0.2.1
+dj-database-url==0.2.1
+django-compressor==1.2
