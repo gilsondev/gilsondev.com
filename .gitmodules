@@ -1,0 +1,3 @@
+[submodule "gilsondev/static/bootstrap"]
+	path = gilsondev/static/bootstrap
+	url = git@github.com:twitter/bootstrap.git
