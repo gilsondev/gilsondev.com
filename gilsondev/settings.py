@@ -14,6 +14,8 @@ PROJECT_DIR = Path(__file__).parent
 # django.utils.translation -- that module depends on the settings.
 gettext_noop = lambda s: s
 
+INTERNAL_IPS = '127.0.0.1'
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
