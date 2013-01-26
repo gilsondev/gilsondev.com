@@ -10,3 +10,4 @@ ipdb==0.7
 sorl-thumbnail==11.12
 django-tagging-ng==0.3.3
 Pillow==1.7.8
+honcho==0.2.0
