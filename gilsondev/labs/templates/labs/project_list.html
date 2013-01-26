@@ -1,0 +1,53 @@
+{% extends "core/base_pages.html" %}
+{% load compress %}
+{% load thumbnail %}
+
+{% block title %}
+    <title>Gilson #DEV - Labs</title>
+{% endblock title %}
+
+{% block styles %}
+    {{ block.super }}
+    {% if debug %}
+        <link href="{{ STATIC_URL }}less/labs.less" rel="stylesheet/less" type="text/css">
+        <script src="{{ STATIC_URL }}js/less.js" type="text/javascript"></script>
+    {% else %}
+        {% compress css %}
+            <link href="{{ STATIC_URL }}less/labs.less" rel="stylesheet/less" type="text/css">
+        {% endcompress %}
+    {% endif %}
+{% endblock styles %}
+
+{% block meta %}
+
+{% endblock meta %}
+
+{% block content %}
+    <h2>Labs</h2>
+    <div class="row">
+        <ul class="thumbnails">
+            {% for project in projects %}
+                <li class="span3">
+                    <div class="thumbnail">
+                        {% thumbnail project.image "300x200" as imagem %}
+                            <div class="project-image">
+                                <a href="{{ project.url_project }}"><img src="{{ imagem.url }}" alt="Imagem do Projeto" /></a>
+                            </div>
+                        {% endthumbnail %}
+                        <div class="caption">
+                            <a href="{{ project.url_project }}">
+                                <h4>{{ project.name }}</h4>
+                            </a>
+                        </div>
+                        <p><strong>Repositório: </strong>{{ project.url_repo }}</p>
+                        <p><strong>Licença: </strong>{{ project.license }}</p>
+                        <p><strong>Tecnologia Usada: </strong></p>
+                        {% for tag in project.tags %}
+                            <span class="badge badge-info"> {{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
