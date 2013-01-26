@@ -175,6 +175,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
+    'south',
     'compressor',
 
     'gilsondev.core',
@@ -209,3 +210,6 @@ LOGGING = {
         },
     }
 }
+
+# South
+SOUTH_TEST_MIGRATE = False
