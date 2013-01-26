@@ -41,6 +41,10 @@
                         </div>
                         <p><strong>Repositório: </strong>{{ project.url_repo }}</p>
                         <p><strong>Licença: </strong>{{ project.license }}</p>
+                        <p><strong>Tecnologia Usada: </strong></p>
+                        {% for tag in project.tags %}
+                            <span class="badge badge-info"> {{ tag.name }}</span>
+                        {% endfor %}
                     </div>
                 </li>
             {% endfor %}
