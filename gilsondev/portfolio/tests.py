@@ -1,16 +1,18 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
+# -*- coding: utf8 -*-
 
 from django.test import TestCase
 
+from gilsondev.portfolio.models import Portfolio
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+
+class PortfolioModelTest(TestCase):
+    def setUp(self):
+        self.portfolio = Portfolio.objects.create(
+            nome='Nome do Projeto',
+            url='http://projeto.com',
+            imagem='/media/portfolios/imagem.png'
+        )
+
+    def test_create(self):
+        """O porfolio deve ser criado"""
+        self.assertTrue(self.portfolio.pk)
