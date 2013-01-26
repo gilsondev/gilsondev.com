@@ -1,6 +1,7 @@
 # -*- coding: utf8 -*-
 
+from django.shortcuts import render
+
 
 def list(request):
-    from django.http import HttpResponse
-    return HttpResponse()
+    return render(request, 'portfolio/portfolio_list.html')

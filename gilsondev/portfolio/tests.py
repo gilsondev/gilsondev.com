@@ -30,3 +30,12 @@ class PortfolioURLTest(TestCase):
     def test_get(self):
         """Retorna status 200"""
         self.assertEquals(self.resp.status_code, 200)
+
+
+class PortfolioViewTest(TestCase):
+    def setUp(self):
+        self.resp = self.client.get(reverse('portfolios'))
+
+    def test_use_template(self):
+        """Verifica o template usado"""
+        self.assertTemplateUsed(self.resp, 'portfolio/portfolio_list.html')
