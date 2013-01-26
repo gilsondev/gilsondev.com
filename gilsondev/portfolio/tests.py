@@ -16,3 +16,7 @@ class PortfolioModelTest(TestCase):
     def test_create(self):
         """O porfolio deve ser criado"""
         self.assertTrue(self.portfolio.pk)
+
+    def test_unicode(self):
+        """Exibe a representação do objeto em String"""
+        self.assertEquals(u'Nome do Projeto', unicode(self.portfolio))
