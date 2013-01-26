@@ -178,6 +178,7 @@ INSTALLED_APPS = (
     'south',
     'compressor',
     'sorl.thumbnail',
+    'tagging',
 
     'gilsondev.core',
     'gilsondev.portfolio',

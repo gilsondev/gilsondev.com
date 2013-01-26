@@ -1,8 +1,11 @@
 # -*- coding: utf8 -*-
 
+import tagging
+
 from django.db import models
 
 from sorl.thumbnail import ImageField
+from sorl.thumbnail import delete
 
 
 class Project(models.Model):
@@ -20,6 +23,14 @@ class Project(models.Model):
     def __unicode__(self):
         return self.name
 
+    def delete(self):
+        # Deletando a imagem antes de deletar o registro
+        delete(self.image)
+        super(Project, self).delete()
+
     @models.permalink
     def get_absolute_url(self):
         pass
+
+# Habilitando suporte a tags
+tagging.register(Project)
