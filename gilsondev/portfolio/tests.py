@@ -39,3 +39,7 @@ class PortfolioViewTest(TestCase):
     def test_use_template(self):
         """Verifica o template usado"""
         self.assertTemplateUsed(self.resp, 'portfolio/portfolio_list.html')
+
+    def test_list_in_context(self):
+        """Envia a lista de porfolios no contexto da view"""
+        self.assertTrue(self.resp.context.has_key('portfolios'))
