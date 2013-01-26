@@ -181,6 +181,7 @@ INSTALLED_APPS = (
 
     'gilsondev.core',
     'gilsondev.portfolio',
+    'gilsondev.labs',
 )
 
 
