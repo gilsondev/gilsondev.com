@@ -173,11 +173,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django.contrib.admin',
+    'django.contrib.admin',
 
     'compressor',
 
     'gilsondev.core',
+    'gilsondev.portfolio',
 )
 
 # A sample logging configuration. The only tangible logging
