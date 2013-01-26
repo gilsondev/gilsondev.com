@@ -16,7 +16,7 @@ gettext_noop = lambda s: s
 
 INTERNAL_IPS = '127.0.0.1'
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', True)
 TEMPLATE_DEBUG = DEBUG
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST', '')
@@ -182,6 +182,12 @@ INSTALLED_APPS = (
     'gilsondev.core',
     'gilsondev.portfolio',
 )
+
+
+if DEBUG:
+    INSTALLED_APPS += (
+        'debug_toolbar',
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
