@@ -8,3 +8,4 @@ django-compressor==1.2
 ipython==0.13.1
 ipdb==0.7
 sorl-thumbnail==11.12
+django-tagging-ng==0.3.3
