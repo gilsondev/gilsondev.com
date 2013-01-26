@@ -1,5 +1,6 @@
 {% extends "core/base_pages.html" %}
 {% load compress %}
+{% load thumbnail %}
 
 {% block styles %}
     {{ block.super }}
@@ -21,56 +22,22 @@
     <h2>Portfólio</h2>
     <div class="row">
         <ul class="thumbnails">
-            <li class="span3">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/300x200" alt="">
-                    <div class="caption">
-                        <a href="#">
-                            <h4>Nome do Projeto</h4>
-                        </a>
+            {% for portfolio in portfolios %}
+                <li class="span3">
+                    <div class="thumbnail">
+                        {% thumbnail portfolio.imagem "300x200" as imagem %}
+                            <div class="portfolio-image">
+                                <a href="{{ portfolio.url }}"><img src="{{ imagem.url }}" alt="Imagem do Projeto" /></a>
+                            </div>
+                        {% endthumbnail %}
+                        <div class="caption">
+                            <a href="{{ portfolio.url }}">
+                                <h4>{{ portfolio.nome }}</h4>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="span3">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/300x200" alt="">
-                    <div class="caption">
-                        <h4>Nome do Projeto</h4>
-                    </div>
-                </div>
-            </li>
-            <li class="span3">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/300x200" alt="">
-                    <div class="caption">
-                        <h4>Nome do Projeto</h4>
-                    </div>
-                </div>
-            </li>
-            <li class="span3">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/300x200" alt="">
-                    <div class="caption">
-                        <h4>Nome do Projeto</h4>
-                    </div>
-                </div>
-            </li>
-            <li class="span3">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/300x200" alt="">
-                    <div class="caption">
-                        <h4>Nome do Projeto</h4>
-                    </div>
-                </div>
-            </li>
-            <li class="span3">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/300x200" alt="">
-                    <div class="caption">
-                        <h4>Nome do Projeto</h4>
-                    </div>
-                </div>
-            </li>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 {% endblock content %}

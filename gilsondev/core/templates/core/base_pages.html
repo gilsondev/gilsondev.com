@@ -13,39 +13,46 @@
 {% endblock styles %}
 
 {% block navbar %}
-    <div class="span6 offset8" id="navbar">
-        <ul class="nav nav-pills">
-            <li>
-                <a href="{% url home %}" rel="tooltip" data-placement="bottom" data-original-title="Home">
-                    <img src="{{ STATIC_URL }}img/menu/home.png" alt="Home" width="24" height="24">
-                </a>
-            </li>
-            <li class="active">
-                <a href="{% url portfolios %}" rel="tooltip" data-placement="bottom" data-original-title="Portfólio">
-                    <img src="{{ STATIC_URL }}img/menu/suitcase.png" alt="Home" width="24" height="24">
-                </a>
-            </li>
-            <li>
-                <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Labs">
-                    <img src="{{ STATIC_URL }}img/menu/lab.png" alt="Home" width="24" height="24">
-                </a>
-            </li>
-            <li>
-                <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Favoritos">
-                    <img src="{{ STATIC_URL }}img/menu/bookmark.png" alt="Home" width="13" height="13">
-                </a>
-            </li>
-            <li>
-                <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Palestras">
-                    <img src="{{ STATIC_URL }}img/menu/window.png" alt="Home" width="24" height="24">
-                </a>
-            </li>
-            <li>
-                <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Contato">
-                    <img src="{{ STATIC_URL }}img/menu/envelope.png" alt="Home" width="24" height="24">
-                </a>
-            </li>
-        </ul>
+    <div class="row" id="topbar">
+        <div class="span3">
+            <h3>Gilson Filho</h3>
+        </div>
+        <div class="span9">
+            <div class="span8 offset5" id="navbar">
+                <ul class="nav nav-pills">
+                    <li>
+                        <a href="{% url home %}" rel="tooltip" data-placement="bottom" data-original-title="Home">
+                            <img src="{{ STATIC_URL }}img/menu/home.png" alt="Home" width="24" height="24">
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="{% url portfolios %}" rel="tooltip" data-placement="bottom" data-original-title="Portfólio">
+                            <img src="{{ STATIC_URL }}img/menu/suitcase.png" alt="Home" width="24" height="24">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Labs">
+                            <img src="{{ STATIC_URL }}img/menu/lab.png" alt="Home" width="24" height="24">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Favoritos">
+                            <img src="{{ STATIC_URL }}img/menu/bookmark.png" alt="Home" width="13" height="13">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Palestras">
+                            <img src="{{ STATIC_URL }}img/menu/window.png" alt="Home" width="24" height="24">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Contato">
+                            <img src="{{ STATIC_URL }}img/menu/envelope.png" alt="Home" width="24" height="24">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 {% endblock navbar %}
 
