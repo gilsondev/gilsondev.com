@@ -1,6 +1,7 @@
 # -*- coding: utf8 -*-
 
 from django.test import TestCase
+from django.core.urlresolvers import reverse
 
 from gilsondev.portfolio.models import Portfolio
 
@@ -20,3 +21,12 @@ class PortfolioModelTest(TestCase):
     def test_unicode(self):
         """Exibe a representação do objeto em String"""
         self.assertEquals(u'Nome do Projeto', unicode(self.portfolio))
+
+
+class PortfolioURLTest(TestCase):
+    def setUp(self):
+        self.resp = self.client.get(reverse('portfolios'))
+
+    def test_get(self):
+        """Retorna status 200"""
+        self.assertEquals(self.resp.status_code, 200)

@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'', include('gilsondev.core.urls')),
+    url(r'^portfolio', include('gilsondev.portfolio.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
