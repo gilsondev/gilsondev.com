@@ -16,7 +16,7 @@ gettext_noop = lambda s: s
 
 INTERNAL_IPS = '127.0.0.1'
 
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get('DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST', '')
