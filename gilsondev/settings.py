@@ -222,3 +222,8 @@ LOGGING = {
 
 # South
 SOUTH_TEST_MIGRATE = False
+
+# Django Compressor
+COMPRESS_PRECOMPILERS = (
+   ('text/less', 'lessc {infile} {outfile}'),
+)
