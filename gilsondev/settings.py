@@ -14,8 +14,6 @@ PROJECT_DIR = Path(__file__).parent
 # django.utils.translation -- that module depends on the settings.
 gettext_noop = lambda s: s
 
-INTERNAL_IPS = '127.0.0.1'
-
 DEBUG = os.environ.get('DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
 
@@ -225,6 +223,9 @@ LOGGING = {
 SOUTH_TEST_MIGRATE = False
 
 # Django Compressor
+
+INTERNAL_IPS = ('127.0.0.1',)
+
 COMPRESS_PRECOMPILERS = (
    ('text/less', 'lessc {infile} {outfile}'),
 )
