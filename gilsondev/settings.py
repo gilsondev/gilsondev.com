@@ -14,7 +14,7 @@ PROJECT_DIR = Path(__file__).parent
 # django.utils.translation -- that module depends on the settings.
 gettext_noop = lambda s: s
 
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DEBUG', True)
 TEMPLATE_DEBUG = DEBUG
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST', '')
@@ -30,7 +30,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite://./database.db')
+    'default': dj_database_url.config(default='sqlite://' + PROJECT_DIR.child('database.db'))
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -221,6 +221,8 @@ SOUTH_TEST_MIGRATE = False
 
 INTERNAL_IPS = ('127.0.0.1',)
 
+COMPRESS_ENABLED = True
+
 COMPRESS_PRECOMPILERS = (
-   ('text/less', 'lessc {infile} {outfile}'),
+    ('text/less', 'lessc {infile} {outfile}'),
 )
