@@ -146,14 +146,14 @@ def prepare_virtualenv():
     run('virtualenv --no-site-packages --unzip-setuptools %s' % env.project)
 
 
-def checkout_project():
+def checkout_project(branch='master'):
     """Checkout or update project source code"""
     if exists('/home/%s/%s' % (env.user, env.project)):
         with lcd('/home/%s/%s' % (env.user, env.project)):
             run('git pull')
     else:
         with lcd('/home/%s' % env.user):
-            run('git clone %s %s' % (env.repository, env.project))
+            run('git clone -b %s %s %s' % (branch, env.repository, env.project))
 
 
 def install_requirements():
@@ -162,12 +162,12 @@ def install_requirements():
         run('pip install -r requirements.txt')
 
 
-def deploy():
+def deploy(branch='master'):
     update()
     install_git()
     install_nginx()
     install_postgresql()
     install_python_packages()
-    checkout_project()
+    checkout_project(branch)
     prepare_virtualenv()
     install_requirements()

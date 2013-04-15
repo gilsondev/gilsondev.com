@@ -174,6 +174,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
+    'gunicorn',
     'south',
     'compressor',
     'sorl.thumbnail',
