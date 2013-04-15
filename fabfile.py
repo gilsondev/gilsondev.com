@@ -162,6 +162,14 @@ def install_requirements():
         run('pip install -r requirements.txt')
 
 
+def restart():
+    """Restart services"""
+    with cd(env.virtualenv_project):
+        sudo('killall gunicorn_django')
+        sudo('service nginx restart')
+        sudo('gunicorn_django -D -c  gunicorn.conf.py')
+
+
 def deploy(branch='master'):
     update()
     install_git()
@@ -171,3 +179,4 @@ def deploy(branch='master'):
     checkout_project(branch)
     prepare_virtualenv()
     install_requirements()
+    restart()
