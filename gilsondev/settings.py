@@ -14,6 +14,16 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', '')
+if 'True' == os.environ.get('SEND_MAIL', 'False'):
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = os.environ.get('SENDGRID_HOST', 'localhost')
+    EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME', '')
+    EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD', '')
+    EMAIL_PORT = os.environ.get('SENDGRID_PORT', 0)
+    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', False)
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -22,7 +32,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '*)t@*v7bjhdfjc^=-!renafwhz04-ivi+lk^9pc1(b#-szhp8k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TEMPLATE_DEBUG = True
+DEBUG = TEMPLATE_DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ['gilsondev.herokuapp.com', 'gilsondev.com']
 
@@ -32,7 +42,7 @@ ALLOWED_HOSTS = ['gilsondev.herokuapp.com', 'gilsondev.com']
 INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'pages',
 )
 
