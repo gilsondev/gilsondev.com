@@ -46,6 +46,7 @@
               <li><a href="#who">O que eu faço?</a></li>
               <li><a href="#portfolio">Últimos Trabalhos</a></li>
               <li><a href="#skills">Habilidades</a></li>
+              <li><a href="http://gilsondev.github.io">Blog</a></li>
               <li><a href="#social">Contato</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -90,26 +91,26 @@
 			<h3>Últimos Trabalhos</h3>
 			<div class="mt"></div>
 			<div class="col-lg-4">
-				<a href="#"><img src="{% static 'img/01.jpg' %}" alt=""></a>
+				<a href="#"><img src="{% static 'img/click_samambaia.png' %}" alt=""></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="{% static 'img/02.jpg' %}" alt=""></a>
+				<a href="#"><img src="{% static 'img/flisol_inscricoes.png' %}" alt=""></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="{% static 'img/03.jpg' %}" alt=""></a>
+				<a href="#"><img src="{% static 'img/bambae.png' %}" alt=""></a>
 			</div>
 		</div>
 
 		<div class="row centered mt grid">
 			<div class="mt"></div>
 			<div class="col-lg-4">
-				<a href="#"><img src="{% static 'img/04.jpg' %}" alt=""></a>
+				<a href="#"><img src="{% static 'img/interlegis.png' %}" alt=""></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="{% static 'img/05.jpg' %}" alt=""></a>
+				<a href="#"><img src="{% static 'img/ultras_cerrado.png' %}" alt=""></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="{% static 'img/06.jpg' %}" alt=""></a>
+				<a href="#"><img src="{% static 'img/bvl_advocacia.jpg' %}" alt=""></a>
 			</div>
 		</div>
 
@@ -387,6 +388,24 @@
                     </script>
                 </div>
                 <div class="col-lg-3 mt">
+                    <canvas id="android" height="130" width="130"></canvas>
+                    <p>Android</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 44,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 56,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("android").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
                     <canvas id="scraping" height="130" width="130"></canvas>
                     <p>Scraping</p>
                     <br>
@@ -419,7 +438,9 @@
 					<div class="col-md-2">
 						<a href="skype:gilsondev?call"><i class="fa fa-skype"></i></a>
 					</div>
-                    <div class="col-md-2"><a href="#"><i class="fa fa-github"></i></a></div>
+                    <div class="col-md-2">
+                        <a href="http://github.com/gilsondev"><i class="fa fa-github"></i></a>
+                    </div>
 					<div class="col-md-2">
 						<a href="http://twitter.com/gilsonfilho"><i class="fa fa-twitter"></i></a>
 					</div>
