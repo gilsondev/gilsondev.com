@@ -1,0 +1,437 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gilson #DEV</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <script src="{% static 'js/chart.js' %}"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="fa fa-bolt"></i></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#contact">Contato</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<div id="hello">
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col-lg-8 col-lg-offset-2 centered">
+	    			<h1>Gilson #DEV</h1>
+	    			<h2>Desenvolvimento de Sistemas</h2>
+	    		</div><!-- /col-lg-8 -->
+	    	</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /hello -->
+
+	<div id="green">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 centered">
+					<img src="{% static 'img/iphone.png' %}" alt="">
+				</div>
+
+				<div class="col-lg-7 centered">
+					<h3>O que eu faço?</h3>
+					<p>
+                        Trabalho com desenvolvimento de aplicações web, sistemas desktop sob demanda do cliente. Atuo com as mais novas tecnologias usados no mercado, e assim procuro tornar a construção da solução de forma simples e produtiva.
+                    </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row centered mt grid">
+			<h3>Últimos Trabalhos</h3>
+			<div class="mt"></div>
+			<div class="col-lg-4">
+				<a href="#"><img src="{% static 'img/01.jpg' %}" alt=""></a>
+			</div>
+			<div class="col-lg-4">
+				<a href="#"><img src="{% static 'img/02.jpg' %}" alt=""></a>
+			</div>
+			<div class="col-lg-4">
+				<a href="#"><img src="{% static 'img/03.jpg' %}" alt=""></a>
+			</div>
+		</div>
+
+		<div class="row centered mt grid">
+			<div class="mt"></div>
+			<div class="col-lg-4">
+				<a href="#"><img src="{% static 'img/04.jpg' %}" alt=""></a>
+			</div>
+			<div class="col-lg-4">
+				<a href="#"><img src="{% static 'img/05.jpg' %}" alt=""></a>
+			</div>
+			<div class="col-lg-4">
+				<a href="#"><img src="{% static 'img/06.jpg' %}" alt=""></a>
+			</div>
+		</div>
+
+		<div class="row mt centered">
+			<div class="col-lg-7 col-lg-offset-1 mt">
+					<p class="lead">
+                        E então? Se gostou do meu perfil e quer saber mais dos meus trabalhos ou
+                        quer conversar mais, entre em contato comigo.
+                    </p>
+			</div>
+
+			<div class="col-lg-3 mt">
+				<p><button type="button" class="btn btn-theme btn-lg">Estou a disposição!</button></p>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="skills">
+		<div class="container">
+			<div class="row centered">
+				<h3>Minhas habilidades</h3>
+				<div class="col-lg-3 mt">
+					<canvas id="javascript" height="130" width="130"></canvas>
+					<p>Javascript</p>
+					<br>
+					<script>
+						var doughnutData = [
+								{
+									value: 70,
+									color:"#74cfae"
+								},
+								{
+									value : 30,
+									color : "#3c3c3c"
+								}
+							];
+							var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+					</script>
+				</div>
+                <div class="col-lg-3 mt">
+                    <canvas id="nodejs" height="130" width="130"></canvas>
+                    <p>Node.js</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 68,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 32,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("nodejs").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="angularjs" height="130" width="130"></canvas>
+                    <p>AngularJS</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 60,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 40,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("angularjs").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+				<div class="col-lg-3 mt">
+					<canvas id="bootstrap" height="130" width="130"></canvas>
+					<p>Bootstrap</p>
+					<br>
+					<script>
+						var doughnutData = [
+								{
+									value: 90,
+									color:"#74cfae"
+								},
+								{
+									value : 10,
+									color : "#3c3c3c"
+								}
+							];
+							var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
+					</script>
+				</div>
+                <div class="col-lg-3 mt">
+                    <canvas id="php" height="130" width="130"></canvas>
+                    <p>PHP</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 79,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 21,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("php").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+				<div class="col-lg-3 mt">
+					<canvas id="wordpress" height="130" width="130"></canvas>
+					<p>Wordpress</p>
+					<br>
+					<script>
+						var doughnutData = [
+								{
+									value: 45,
+									color:"#74cfae"
+								},
+								{
+									value : 55,
+									color : "#3c3c3c"
+								}
+							];
+							var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
+					</script>
+				</div>
+				<div class="col-lg-3 mt">
+					<canvas id="python" height="130" width="130"></canvas>
+					<p>Python</p>
+					<br>
+					<script>
+						var doughnutData = [
+								{
+									value: 85,
+									color:"#74cfae"
+								},
+								{
+									value : 15,
+									color : "#3c3c3c"
+								}
+							];
+							var myDoughnut = new Chart(document.getElementById("python").getContext("2d")).Doughnut(doughnutData);
+					</script>
+				</div>
+                <div class="col-lg-3 mt">
+                    <canvas id="django" height="130" width="130"></canvas>
+                    <p>Django</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 92,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 8,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("django").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="flask" height="130" width="130"></canvas>
+                    <p>Flask</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 63,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 37,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("flask").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="web2py" height="130" width="130"></canvas>
+                    <p>web2py</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 90,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 10,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("web2py").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="java" height="130" width="130"></canvas>
+                    <p>Java</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 89,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 11,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("java").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="JSF" height="130" width="130"></canvas>
+                    <p>JSF</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 80,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 20,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("JSF").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="spring" height="130" width="130"></canvas>
+                    <p>Spring</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 52,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 48,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("spring").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="vraptor" height="130" width="130"></canvas>
+                    <p>VRaptor</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 64,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 36,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("vraptor").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+                <div class="col-lg-3 mt">
+                    <canvas id="scraping" height="130" width="130"></canvas>
+                    <p>Scraping</p>
+                    <br>
+                    <script>
+                        var doughnutData = [
+                                {
+                                    value: 84,
+                                    color:"#74cfae"
+                                },
+                                {
+                                    value : 16,
+                                    color : "#3c3c3c"
+                                }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("scraping").getContext("2d")).Doughnut(doughnutData);
+                    </script>
+                </div>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /skills -->
+
+	<section id="contact"></section>
+	<div id="social">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="col-md-3">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+					</div>
+					<div class="col-md-3">
+						<a href="#"><i class="fa fa-dribbble"></i></a>
+					</div>
+					<div class="col-md-3">
+						<a href="#"><i class="fa fa-twitter"></i></a>
+					</div>
+					<div class="col-md-3">
+						<a href="#"><i class="fa fa-envelope"></i></a>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /social -->
+
+
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<p>&copy; Gilson #DEV - 2014</p>
+			</div>
+		</div>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

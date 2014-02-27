@@ -43,3 +43,4 @@ local
 man
 .noseids
 .env
+.DS_Store
