@@ -37,11 +37,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><i class="fa fa-bolt"></i></a>
+          <a class="navbar-brand" href="#hello">
+            <img src="{% static 'img/logo.png' %}" alt="" width="48" height="48">
+          </a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#contact">Contato</a></li>
+          <ul class="nav navbar-nav">
+              <li><a href="#who">O que eu faço?</a></li>
+              <li><a href="#portfolio">Últimos Trabalhos</a></li>
+              <li><a href="#skills">Habilidades</a></li>
+              <li><a href="#social">Contato</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -52,6 +57,7 @@
 	    <div class="container">
 	    	<div class="row">
 	    		<div class="col-lg-8 col-lg-offset-2 centered">
+                    <img src="{% static 'img/logo.png' %}" alt="">
 	    			<h1>Gilson #DEV</h1>
 	    			<h2>Desenvolvimento de Sistemas</h2>
 	    		</div><!-- /col-lg-8 -->
@@ -59,6 +65,8 @@
 	    </div> <!-- /container -->
 	</div><!-- /hello -->
 
+
+    <section id="who"></section>
 	<div id="green">
 		<div class="container">
 			<div class="row">
@@ -76,7 +84,8 @@
 		</div>
 	</div>
 
-	<div class="container">
+    <section id="portfolio"></section>
+	<div id="portfolio" class="container">
 		<div class="row centered mt grid">
 			<h3>Últimos Trabalhos</h3>
 			<div class="mt"></div>
@@ -104,7 +113,8 @@
 			</div>
 		</div>
 
-		<div class="row mt centered">
+        <section id="contact"></section>
+		<div id="contact" class="row mt centered">
 			<div class="col-lg-7 col-lg-offset-1 mt">
 					<p class="lead">
                         E então? Se gostou do meu perfil e quer saber mais dos meus trabalhos ou
@@ -112,13 +122,14 @@
                     </p>
 			</div>
 
-			<div class="col-lg-3 mt">
+			<div class="col-lg-3 mt mg">
 				<p><button type="button" class="btn btn-theme btn-lg">Estou a disposição!</button></p>
 			</div>
 		</div>
 	</div>
 
 
+    <section id="skills"></section>
 	<div id="skills">
 		<div class="container">
 			<div class="row centered">
@@ -397,22 +408,24 @@
 		</div><!-- /container -->
 	</div><!-- /skills -->
 
-	<section id="contact"></section>
+	<section id="social"></section>
 	<div id="social">
 		<div class="container">
 			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-facebook"></i></a>
+				<div class="col-lg-12">
+					<div class="col-md-2">
+						<a href="http://facebook.com/gilsondev"><i class="fa fa-facebook"></i></a>
 					</div>
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-dribbble"></i></a>
+					<div class="col-md-2">
+						<a href="skype:gilsondev?call"><i class="fa fa-skype"></i></a>
 					</div>
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-twitter"></i></a>
+                    <div class="col-md-2"><a href="#"><i class="fa fa-github"></i></a></div>
+					<div class="col-md-2">
+						<a href="http://twitter.com/gilsonfilho"><i class="fa fa-twitter"></i></a>
 					</div>
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-envelope"></i></a>
+                    <div class="col-md-2"><a href="http://br.linkedin.com/in/gilsondev"><i class="fa fa-linkedin"></i></a></div>
+					<div class="col-md-2">
+						<a href="mailto:contato@gilsondev.com"><i class="fa fa-envelope"></i></a>
 					</div>
 				</div>
 			</div>
@@ -433,5 +446,20 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.navbar li').click(function(e) {
+                $('.navbar li.active').removeClass('active');
+                var $this = $(this);
+                var section = $($this.attr('href'));
+                if (!$this.hasClass('active')) {
+                    $this.addClass('active');
+                }
+
+                $('html, body').animate({scrollTop: section.offset().top}, 2000);
+                e.preventDefault();
+            });
+        });
+    </script>
   </body>
 </html>

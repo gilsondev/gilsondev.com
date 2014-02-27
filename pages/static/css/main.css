@@ -6,7 +6,7 @@
  * Version: 1.0
  * URL: http://blacktie.co
  */
- 
+
 /* FONTS */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
@@ -22,7 +22,7 @@ body {
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
-    
+
     margin-top: 70px;
 }
 
@@ -46,6 +46,10 @@ p {
 
 .mt {
 	margin-top: 40px;
+}
+
+.mg {
+    margin-bottom: 40px;
 }
 
 /* Links */
@@ -129,7 +133,7 @@ a:after {
 /* hello */
 #hello {
 	width: 100%;
-	padding-top: 250px;
+	padding-top: 200px;
 	padding-bottom: 250px;
 }
 
@@ -147,9 +151,10 @@ a:after {
 
 /* Green */
 #green {
-	background-color: #74cfae;
-	padding-top: 50px;
-	margin-bottom: 0px;
+background-color: #74cfae;
+    margin-top: 50px;
+    padding-top: 50px;
+    margin-bottom: 0px;
 }
 
 #green h3 {
@@ -164,12 +169,21 @@ a:after {
 	font-size: 20px;
 }
 
+/* Portfolio */
+#portfolio {
+    padding-top: 40px;
+}
+
+/* Contact */
+#contact {
+    padding-bottom: 30px;
+}
+
 /* Skills */
 #skills {
 	background-color: #4e4e4e;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	margin-top: 50px;
 }
 
 #skills h3 {
@@ -183,11 +197,10 @@ a:after {
 
 /* Social Links */
 #social {
-	width: 100%;
-	padding-top: 200px;
-	padding-bottom: 200px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 180px;
 }
-
 #social i {
 	font-size: 50px;
 	color: #74cfae;
