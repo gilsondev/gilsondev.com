@@ -14,17 +14,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', '')
-if 'True' == os.environ.get('SEND_MAIL', 'False'):
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = os.environ.get('SENDGRID_HOST', 'localhost')
-    EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME', '')
-    EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD', '')
-    EMAIL_PORT = os.environ.get('SENDGRID_PORT', 0)
-    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', False)
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -42,6 +31,9 @@ ALLOWED_HOSTS = ['gilsondev.herokuapp.com', 'gilsondev.com']
 INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'sendgrid',
+    'crispy_forms',
 
     'pages',
 )
@@ -87,3 +79,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Configurations of django-sendgrid
+SENDGRID_EMAIL_HOST = "smtp.sendgrid.net"
+SENDGRID_EMAIL_PORT = 587
+SENDGRID_EMAIL_USERNAME = os.environ.get('SENDGRID_USERNAME', '')
+SENDGRID_EMAIL_PASSWORD = os.environ.get('SENDGRID_PASSWORD', '')
+
+# Crispy Forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
