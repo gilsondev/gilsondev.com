@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import bleach
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+DEFAULT_FROM_EMAIL='contato@gilsondev.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -36,9 +40,11 @@ INSTALLED_APPS = (
     'crispy_forms',
 
     'pages',
+    'contact',
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -88,3 +94,12 @@ SENDGRID_EMAIL_PASSWORD = os.environ.get('SENDGRID_PASSWORD', '')
 
 # Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Bleach
+ALLOWED_TAGS = [
+    'p',
+] + bleach.ALLOWED_TAGS
+ALLOWED_ATTRIBUTES = bleach.ALLOWED_ATTRIBUTES.copy()
+ALLOWED_ATTRIBUTES.update({
+    'a': ['href', 'title', 'rel', 'target'],
+})

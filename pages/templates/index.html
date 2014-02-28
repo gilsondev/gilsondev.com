@@ -61,20 +61,6 @@
             <a href="#"><img src="{% static 'img/bvl_advocacia.jpg' %}" alt=""></a>
         </div>
     </div>
-
-    <section id="contact"></section>
-    <div id="contact" class="row mt centered">
-        <div class="col-lg-7 col-lg-offset-1 mt">
-                <p class="lead">
-                    E então? Se gostou do meu perfil e quer saber mais dos meus trabalhos ou
-                    quer conversar mais, entre em contato comigo.
-                </p>
-        </div>
-
-        <div class="col-lg-3 mt mg">
-            <p><a href="skype:gilsondev?call" class="btn btn-theme btn-lg">Estou a disposição!</a></p>
-        </div>
-    </div>
 </div>
 
 
@@ -372,6 +358,22 @@
                 </script>
             </div>
         </div><!-- /row -->
+
+        <section id="contact"></section>
+        <div id="contact" class="row mt centered">
+            <div class="col-lg-7 col-lg-offset-1 mt">
+                    <p class="lead">
+                        E então? Se gostou do que viu e quer saber mais dos meus trabalhos, entre em contato comigo.
+                    </p>
+            </div>
+
+            <div class="col-lg-4 mt mg">
+                <p>
+                    <a href="skype:gilsondev?call" class="btn btn-theme btn-lg"><i class="fa fa-skype"></i> Skype</a> ou 
+                    <a class="btn btn-theme btn-lg" href="{% url 'contact:contact' %}"><i class="fa fa-envelope"></i> E-mail</a>
+                </p>
+            </div>
+        </div>
     </div><!-- /container -->
 </div><!-- /skills -->
 
@@ -390,13 +392,13 @@
                     <a href="http://github.com/gilsondev"><i class="fa fa-github"></i></a>
                 </div>
                 <div class="col-md-2">
+                    <a href="http://bitbucket.org/gilsondev"><i class="fa fa-bitbucket"></i></a>
+                </div>
+                <div class="col-md-2">
                     <a href="http://twitter.com/gilsonfilho"><i class="fa fa-twitter"></i></a>
                 </div>
                 <div class="col-md-2">
                     <a href="http://br.linkedin.com/in/gilsondev"><i class="fa fa-linkedin"></i></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="mailto:contato@gilsondev.com"><i class="fa fa-envelope"></i></a>
                 </div>
             </div>
         </div>
