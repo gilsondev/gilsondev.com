@@ -9,8 +9,6 @@ from django.conf import settings
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, Field
 
-from sendgrid.message import SendGridEmailMessage
-
 
 class ContactForm(forms.Form):
     name = forms.CharField(label=_(u"Seu nome"))
@@ -61,10 +59,5 @@ class ContactForm(forms.Form):
             'body': self.cleaned_data.get('message'),
             'from_email': self.cleaned_data.get('email')
         }
-        email = SendGridEmailMessage(to=[settings.DEFAULT_FROM_EMAIL],
-                                     **mail_settings)
-        email.sendgrid_headers.setCategory("Contact")
-        response = email.send()
 
-        return response
-
+        # TODO: Send mail
